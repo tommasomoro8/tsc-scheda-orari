@@ -1,6 +1,149 @@
 function getSheet(films, date, closures) {
-    return /*html*/`
-    <!DOCTYPE html>
+    const pages = Math.ceil(films.length / 45)
+
+    const page = /*html*/`
+    <div class="center">
+    
+    <div class="day-title">SCHEDA LAVORO</div>
+
+    <div class="container">
+        <div class="container-section left">
+            <div class="check">CHECK</div>
+            <div class="lables">
+                <div class="room-lable">SALA</div>
+                <div class="time-lable">ORA</div>
+                <div class="name-lable">NOME</div>
+            </div>
+            <div class="rooms">
+                <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
+                <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
+                <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
+                <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
+                <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
+                <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
+                <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
+                <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
+                <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
+                <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
+                <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
+                <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
+                <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
+                <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
+                <div class="rooms-row no-border-bottom"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
+            </div>
+            <div class="cleaning">
+                <div class="cleaning-row"> <div class="cleaning-task">ATRIO-BAR-SELF</div> <div class="cleaning-name"></div> </div>
+                <div class="cleaning-row"> <div class="cleaning-task">TAVOLI-POSACENERI</div> <div class="cleaning-name"></div> </div>
+                <div class="cleaning-row"> <div class="cleaning-task">CORRIDOI-BAGNI</div> <div class="cleaning-name"></div> </div>
+                <div class="cleaning-row"> <div class="cleaning-task">SACCHI-CESTINI</div> <div class="cleaning-name"></div> </div>
+                <div class="cleaning-row"> <div class="cleaning-task">PERIMETRO LATO 6</div> <div class="cleaning-name"></div> </div>
+                <div class="cleaning-row no-border-bottom "> <div class="cleaning-task">PERIMETRO LATO 12</div> <div class="cleaning-name"></div> </div>
+            </div>
+        </div>
+        <div class="container-section center">
+            <div class="check">CHECK</div>
+            <div class="lables">
+                <div class="room-lable">SALA</div>
+                <div class="time-lable">ORA</div>
+                <div class="name-lable">NOME</div>
+            </div>
+            <div class="rooms">
+                <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
+                <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
+                <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
+                <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
+                <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
+                <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
+                <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
+                <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
+                <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
+                <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
+                <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
+                <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
+                <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
+                <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
+                <div class="rooms-row no-border-bottom"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
+            </div>
+            <div class="cleaning">
+                <div class="cleaning-row"> <div class="cleaning-task">ATRIO-BAR-SELF</div> <div class="cleaning-name"></div> </div>
+                <div class="cleaning-row"> <div class="cleaning-task">TAVOLI-POSACENERI</div> <div class="cleaning-name"></div> </div>
+                <div class="cleaning-row"> <div class="cleaning-task">CORRIDOI-BAGNI</div> <div class="cleaning-name"></div> </div>
+                <div class="cleaning-row"> <div class="cleaning-task">SACCHI-CESTINI</div> <div class="cleaning-name"></div> </div>
+                <div class="cleaning-row"> <div class="cleaning-task">PERIMETRO LATO 6</div> <div class="cleaning-name"></div> </div>
+                <div class="cleaning-row no-border-bottom "> <div class="cleaning-task">PERIMETRO LATO 12</div> <div class="cleaning-name"></div> </div>
+            </div>
+        </div>
+        <div class="container-section right">
+            <div class="check">CHECK</div>
+            <div class="lables">
+                <div class="room-lable">SALA</div>
+                <div class="time-lable">ORA</div>
+                <div class="name-lable">NOME</div>
+            </div>
+            <div class="rooms">
+                <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
+                <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
+                <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
+                <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
+                <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
+                <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
+                <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
+                <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
+                <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
+                <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
+                <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
+                <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
+                <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
+                <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
+                <div class="rooms-row no-border-bottom"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
+            </div>
+            <div class="cleaning">
+                <div class="cleaning-row"> <div class="cleaning-task">ATRIO-BAR-SELF</div> <div class="cleaning-name"></div> </div>
+                <div class="cleaning-row"> <div class="cleaning-task">TAVOLI-POSACENERI</div> <div class="cleaning-name"></div> </div>
+                <div class="cleaning-row"> <div class="cleaning-task">CORRIDOI-BAGNI</div> <div class="cleaning-name"></div> </div>
+                <div class="cleaning-row"> <div class="cleaning-task">SACCHI-CESTINI</div> <div class="cleaning-name"></div> </div>
+                <div class="cleaning-row"> <div class="cleaning-task">PERIMETRO LATO 6</div> <div class="cleaning-name"></div> </div>
+                <div class="cleaning-row no-border-bottom "> <div class="cleaning-task">PERIMETRO LATO 12</div> <div class="cleaning-name"></div> </div>
+            </div>
+        </div>
+        <div class="closures-section closures">
+            <div class="closures-rooms">
+                <div class="closures-row title"> CHIUSURE </div>
+                <div class="closures-row"> <div class="closures-room"></div> <div class="closures-time"></div> </div>
+                <div class="closures-row"> <div class="closures-room"></div> <div class="closures-time"></div> </div>
+                <div class="closures-row"> <div class="closures-room"></div> <div class="closures-time"></div> </div>
+                <div class="closures-row"> <div class="closures-room"></div> <div class="closures-time"></div> </div>
+                <div class="closures-row"> <div class="closures-room"></div> <div class="closures-time"></div> </div>
+                <div class="closures-row"> <div class="closures-room"></div> <div class="closures-time"></div> </div>
+                <div class="closures-row"> <div class="closures-room"></div> <div class="closures-time"></div> </div>
+                <div class="closures-row"> <div class="closures-room"></div> <div class="closures-time"></div> </div>
+                <div class="closures-row"> <div class="closures-room"></div> <div class="closures-time"></div> </div>
+                <div class="closures-row"> <div class="closures-room"></div> <div class="closures-time"></div> </div>
+                <div class="closures-row"> <div class="closures-room"></div> <div class="closures-time"></div> </div>
+                <div class="closures-row no-border-bottom"> <div class="closures-room"></div> <div class="closures-time"></div> </div>
+            </div>
+
+            <div class="closures-rooms">
+                <div class="closures-row title"> PAUSE </div>
+                <div class="closures-row"> <div class="closures-room"></div> <div class="closures-time"></div> </div>
+                <div class="closures-row"> <div class="closures-room"></div> <div class="closures-time"></div> </div>
+                <div class="closures-row"> <div class="closures-room"></div> <div class="closures-time"></div> </div>
+                <div class="closures-row"> <div class="closures-room"></div> <div class="closures-time"></div> </div>
+                <div class="closures-row"> <div class="closures-room"></div> <div class="closures-time"></div> </div>
+                <div class="closures-row"> <div class="closures-room"></div> <div class="closures-time"></div> </div>
+                <div class="closures-row"> <div class="closures-room"></div> <div class="closures-time"></div> </div>
+                <div class="closures-row"> <div class="closures-room"></div> <div class="closures-time"></div> </div>
+                <div class="closures-row"> <div class="closures-room"></div> <div class="closures-time"></div> </div>
+                <div class="closures-row"> <div class="closures-room"></div> <div class="closures-time"></div> </div>
+                <div class="closures-row"> <div class="closures-room"></div> <div class="closures-time"></div> </div>
+                <div class="closures-row no-border-bottom"> <div class="closures-room"></div> <div class="closures-time"></div> </div>
+            </div>
+        </div>
+    </div>
+</div>
+    `
+    
+    return /*html*/`<!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -26,15 +169,6 @@ function getSheet(films, date, closures) {
                 font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
             }
     
-            .center {
-                width: 100vw;
-                height: 100vh;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
-            }
-    
             .row {
                 display: flex;
                 flex-direction: row;
@@ -57,7 +191,7 @@ function getSheet(films, date, closures) {
                 size: landscape; /* Set page orientation to landscape */
             }
     
-            #day-title {
+            .day-title {
                 width: 90vw;
                 margin-right: 10vw;
                 height: 4vh;
@@ -71,7 +205,7 @@ function getSheet(films, date, closures) {
     
             }
     
-            #container {
+            .container {
                 width: 100vw;
                 height: 95vh;
                 /* border-style: solid; */
@@ -87,18 +221,16 @@ function getSheet(films, date, closures) {
                 justify-content: center;
                 align-items: center;
             }
-    
-            #left {
+
+            .container-section.left {
                 margin-left: 0;
                 margin-right: 2.5vh;
             }
-    
-            #center {
+            .container-section.center {
                 margin-left: 2.5vh;
                 margin-right: 2.5vh;
             }
-    
-            #right {
+            .container-section.right {
                 margin-left: 2.5vh;
                 margin-right: 0;
             }
@@ -319,145 +451,18 @@ function getSheet(films, date, closures) {
         </style>
     </head>
     <body>
-        <div class="center">
-    
-            <div id="day-title">SCHEDA LAVORO</div>
-    
-            <div id="container">
-                <div class="container-section" id="left">
-                    <div class="check">CHECK</div>
-                    <div class="lables">
-                        <div class="room-lable">SALA</div>
-                        <div class="time-lable">ORA</div>
-                        <div class="name-lable">NOME</div>
-                    </div>
-                    <div class="rooms">
-                        <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
-                        <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
-                        <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
-                        <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
-                        <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
-                        <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
-                        <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
-                        <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
-                        <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
-                        <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
-                        <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
-                        <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
-                        <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
-                        <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
-                        <div class="rooms-row no-border-bottom"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
-                    </div>
-                    <div class="cleaning">
-                        <div class="cleaning-row"> <div class="cleaning-task">ATRIO-BAR-SELF</div> <div class="cleaning-name"></div> </div>
-                        <div class="cleaning-row"> <div class="cleaning-task">TAVOLI-POSACENERI</div> <div class="cleaning-name"></div> </div>
-                        <div class="cleaning-row"> <div class="cleaning-task">CORRIDOI-BAGNI</div> <div class="cleaning-name"></div> </div>
-                        <div class="cleaning-row"> <div class="cleaning-task">SACCHI-CESTINI</div> <div class="cleaning-name"></div> </div>
-                        <div class="cleaning-row"> <div class="cleaning-task">PERIMETRO LATO 6</div> <div class="cleaning-name"></div> </div>
-                        <div class="cleaning-row no-border-bottom "> <div class="cleaning-task">PERIMETRO LATO 12</div> <div class="cleaning-name"></div> </div>
-                    </div>
-                </div>
-                <div class="container-section" id="center">
-                    <div class="check">CHECK</div>
-                    <div class="lables">
-                        <div class="room-lable">SALA</div>
-                        <div class="time-lable">ORA</div>
-                        <div class="name-lable">NOME</div>
-                    </div>
-                    <div class="rooms">
-                        <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
-                        <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
-                        <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
-                        <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
-                        <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
-                        <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
-                        <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
-                        <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
-                        <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
-                        <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
-                        <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
-                        <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
-                        <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
-                        <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
-                        <div class="rooms-row no-border-bottom"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
-                    </div>
-                    <div class="cleaning">
-                        <div class="cleaning-row"> <div class="cleaning-task">ATRIO-BAR-SELF</div> <div class="cleaning-name"></div> </div>
-                        <div class="cleaning-row"> <div class="cleaning-task">TAVOLI-POSACENERI</div> <div class="cleaning-name"></div> </div>
-                        <div class="cleaning-row"> <div class="cleaning-task">CORRIDOI-BAGNI</div> <div class="cleaning-name"></div> </div>
-                        <div class="cleaning-row"> <div class="cleaning-task">SACCHI-CESTINI</div> <div class="cleaning-name"></div> </div>
-                        <div class="cleaning-row"> <div class="cleaning-task">PERIMETRO LATO 6</div> <div class="cleaning-name"></div> </div>
-                        <div class="cleaning-row no-border-bottom "> <div class="cleaning-task">PERIMETRO LATO 12</div> <div class="cleaning-name"></div> </div>
-                    </div>
-                </div>
-                <div class="container-section" id="right">
-                    <div class="check">CHECK</div>
-                    <div class="lables">
-                        <div class="room-lable">SALA</div>
-                        <div class="time-lable">ORA</div>
-                        <div class="name-lable">NOME</div>
-                    </div>
-                    <div class="rooms">
-                        <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
-                        <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
-                        <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
-                        <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
-                        <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
-                        <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
-                        <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
-                        <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
-                        <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
-                        <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
-                        <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
-                        <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
-                        <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
-                        <div class="rooms-row"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
-                        <div class="rooms-row no-border-bottom"> <div class="room"></div> <div class="time"></div> <div class="name"></div> </div>
-                    </div>
-                    <div class="cleaning">
-                        <div class="cleaning-row"> <div class="cleaning-task">ATRIO-BAR-SELF</div> <div class="cleaning-name"></div> </div>
-                        <div class="cleaning-row"> <div class="cleaning-task">TAVOLI-POSACENERI</div> <div class="cleaning-name"></div> </div>
-                        <div class="cleaning-row"> <div class="cleaning-task">CORRIDOI-BAGNI</div> <div class="cleaning-name"></div> </div>
-                        <div class="cleaning-row"> <div class="cleaning-task">SACCHI-CESTINI</div> <div class="cleaning-name"></div> </div>
-                        <div class="cleaning-row"> <div class="cleaning-task">PERIMETRO LATO 6</div> <div class="cleaning-name"></div> </div>
-                        <div class="cleaning-row no-border-bottom "> <div class="cleaning-task">PERIMETRO LATO 12</div> <div class="cleaning-name"></div> </div>
-                    </div>
-                </div>
-                <div class="closures-section" id="closures">
-                    <div class="closures-rooms">
-                        <div class="closures-row title"> CHIUSURE </div>
-                        <div class="closures-row"> <div class="closures-room"></div> <div class="closures-time"></div> </div>
-                        <div class="closures-row"> <div class="closures-room"></div> <div class="closures-time"></div> </div>
-                        <div class="closures-row"> <div class="closures-room"></div> <div class="closures-time"></div> </div>
-                        <div class="closures-row"> <div class="closures-room"></div> <div class="closures-time"></div> </div>
-                        <div class="closures-row"> <div class="closures-room"></div> <div class="closures-time"></div> </div>
-                        <div class="closures-row"> <div class="closures-room"></div> <div class="closures-time"></div> </div>
-                        <div class="closures-row"> <div class="closures-room"></div> <div class="closures-time"></div> </div>
-                        <div class="closures-row"> <div class="closures-room"></div> <div class="closures-time"></div> </div>
-                        <div class="closures-row"> <div class="closures-room"></div> <div class="closures-time"></div> </div>
-                        <div class="closures-row"> <div class="closures-room"></div> <div class="closures-time"></div> </div>
-                        <div class="closures-row"> <div class="closures-room"></div> <div class="closures-time"></div> </div>
-                        <div class="closures-row no-border-bottom"> <div class="closures-room"></div> <div class="closures-time"></div> </div>
-                    </div>
-    
-                    <div class="closures-rooms">
-                        <div class="closures-row title"> PAUSE </div>
-                        <div class="closures-row"> <div class="closures-room"></div> <div class="closures-time"></div> </div>
-                        <div class="closures-row"> <div class="closures-room"></div> <div class="closures-time"></div> </div>
-                        <div class="closures-row"> <div class="closures-room"></div> <div class="closures-time"></div> </div>
-                        <div class="closures-row"> <div class="closures-room"></div> <div class="closures-time"></div> </div>
-                        <div class="closures-row"> <div class="closures-room"></div> <div class="closures-time"></div> </div>
-                        <div class="closures-row"> <div class="closures-room"></div> <div class="closures-time"></div> </div>
-                        <div class="closures-row"> <div class="closures-room"></div> <div class="closures-time"></div> </div>
-                        <div class="closures-row"> <div class="closures-room"></div> <div class="closures-time"></div> </div>
-                        <div class="closures-row"> <div class="closures-room"></div> <div class="closures-time"></div> </div>
-                        <div class="closures-row"> <div class="closures-room"></div> <div class="closures-time"></div> </div>
-                        <div class="closures-row"> <div class="closures-room"></div> <div class="closures-time"></div> </div>
-                        <div class="closures-row no-border-bottom"> <div class="closures-room"></div> <div class="closures-time"></div> </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+        ${
+            (() => {
+                let pageSum = ""
+
+                for (let i = 0; i < pages; i++)
+                    pageSum += page
+
+                return pageSum
+            })()
+        }
+ 
 
         <script>
             const films = ${JSON.stringify(films)}
@@ -466,7 +471,15 @@ function getSheet(films, date, closures) {
 
             const months = ["GENNAIO", "FEBBRAIO", "MARZO", "APRILE", "MAGGIO", "GIUGNO", "LUGLIO", "AGOSTO", "SETTEMBRE", "OTTOBRE", "NOVEMBRE", "DICEMBRE"]
 
-            document.getElementById("day-title").innerText = "SCHEDA LAVORO - " + date.getDate() + " " + months[date.getMonth()] + " " + date.getFullYear()
+
+            const dayTitles = document.getElementsByClassName("day-title")
+            const pageNum = dayTitles.length
+
+            for (let i = 0; i < dayTitles.length; i++) {
+                dayTitles[i].innerText = "SCHEDA LAVORO - " + date.getDate() + " " + months[date.getMonth()] + " " + date.getFullYear() + ((dayTitles.length > 1) ? " - PAGINA " + parseInt(i+1) : "")
+            }
+
+            document.title = "SCHEDA LAVORO - " + formatString(date.getDate().toString()) + "/" + formatString((date.getMonth() + 1).toString()) + "/" + date.getFullYear()
 
             console.log(films, date, closures)
 
@@ -498,16 +511,18 @@ function getSheet(films, date, closures) {
 
 
             const closuresRows = document.getElementsByClassName("closures-row")
+            console.log(closuresRows)
 
-            for (let i = 0; i < closures.length; i++) {
-                console.log(i)
-                closuresRows[i+1].children[0].innerText = closures[i].room
-                closuresRows[i+1].children[1].innerText = fromMinutesToTime(closures[i].realEndTime)
+            for (let page = 0; page < pageNum; page++) {
+                for (let i = 0; i < closures.length; i++) {
+                    closuresRows[i + (12*(page*2)) + ((page*2)+1)].children[0].innerText = closures[i].room
+                    closuresRows[i + (12*(page*2)) + ((page*2)+1)].children[1].innerText = fromMinutesToTime(closures[i].realEndTime)
+                }
             }
+
 
         </script>
         
     </body>
-    </html>
-    `
+    </html>`
 }
