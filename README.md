@@ -1,4 +1,4 @@
-# TSC Work Sheet
+# The Space Cinema Work Sheet
 
 A web app that turns The Space Cinema's daily screening schedule into a printable work sheet, with the time ushers must enter each screen.
 
