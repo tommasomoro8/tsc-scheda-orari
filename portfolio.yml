@@ -1,0 +1,25 @@
+title: "TSC Work Sheet"
+slug: "tsc-work-sheet"
+category: "pers"         # uni | school | pers | comm
+year: 2024
+period: "Jun 2024 – Jul 2024"
+status: "completed"      # completed | in progress | archived
+role: "solo"             # e.g. "solo", "team of 4, backend"
+cover: docs/screenshots/cover.png
+demo: ""
+note: "Needs the cinema's Vista exports and a Firebase project: there is no public demo."
+press: []
+screenshots:
+  - path: docs/screenshots/cover.png
+    alt: "Home screen of the app: The Space Cinema logo, the title \"Scheda Lavoro\", an orange button to create a new work sheet and a \"Consulta orari salvati\" link to the saved times"
+  - path: docs/screenshots/upload-xls.png
+    alt: "Step one: progress bar with the three steps \"Carica l'XLS\", \"Inserisci orari luci\", \"Scarica la scheda\" and an orange button to upload the XLS file"
+  # TODO: uncomment once the file exists
+  # - path: docs/screenshots/lights-times.png
+  #   alt: "Step two: window listing the films with no saved credits, here \"(V.O.) KINDS OF KINDNESS\", with hours and minutes fields under \"Accensione luci dopo\" and the Indietro and Fatto buttons"
+  - path: docs/screenshots/sheet-ready.png
+    alt: "Step three: the message \"La scheda è pronta!\" with an orange button to download or print the work sheet"
+  - path: docs/screenshots/work-sheet.png
+    alt: "Printed work sheet for 10 June 2024: three columns of rows with screen number, entry time and an empty name field, cleaning tasks under each column, and on the right the closures box with each screen's closing time and an empty breaks box"
+  - path: docs/screenshots/saved-times.png
+    alt: "Saved times window: list of films such as \"IF - GLI AMICI IMMAGINARI - 9 min\" and \"LA STANZA DEGLI OMICIDI - 15 min\", each with a trash icon, and an orange Fatto button"
