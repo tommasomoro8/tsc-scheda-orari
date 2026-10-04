@@ -3,6 +3,7 @@ const bodyParser = require('body-parser')
 const helmet = require('helmet')
 const rateLimit = require('express-rate-limit') // use "node": "14.x" in glitch
 
+const path = require("path")
 const express = require("express")
 const app = express()
 
@@ -48,7 +49,7 @@ app.use(cookieParser())
 app.use(removeLastSlash)
 app.use(bodyParser.json())
 
-app.use("/", express.static('./static'))
+app.use("/", express.static(path.join(__dirname, "static")))
 
 
 app.get("/", (req, res) => {
