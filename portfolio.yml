@@ -7,7 +7,7 @@ status: "completed"      # completed | in progress | archived
 role: "solo"             # e.g. "solo", "team of 4, backend"
 cover: docs/screenshots/cover.png
 demo: ""
-note: "Needs the cinema's Vista exports and a Firebase project: there is no public demo."
+note: "Needs a Firebase project and a Vista export (a sample is in the repository): there is no public demo."
 press: []
 screenshots:
   - path: docs/screenshots/cover.png

@@ -61,7 +61,7 @@ I also wrote a three-page [user guide in Italian](docs/user-guide-it.pdf) for my
 
 ## From input to output
 
-The input is the Vista report for 10 June 2024. These are some of its rows (the report has 41 screenings across 12 screens):
+The input is the Vista report for 10 June 2024 ([`docs/input.XLS`](docs/input.XLS)). These are some of its rows (the report has 41 screenings across 12 screens):
 
 | Sala | Start | Finish | Film Title |
 | --- | --- | --- | --- |
@@ -143,7 +143,7 @@ Then start it from the repository root (that's where `.env` is read from):
 npm start
 ```
 
-Open http://localhost:3000. To try the full flow you need a "Projection Schedule by Start Time" XLS exported from Vista. The repository doesn't include one.
+Open http://localhost:3000. To try the full flow, upload [`docs/input.XLS`](docs/input.XLS), the Vista "Projection Schedule by Start Time" export for 10 June 2024. With an empty database, step two asks for the credits of every film in it.
 
 **Without a Firebase project.** With Java installed, you can use the Firestore emulator instead: `firebase-admin` connects to it when `FIRESTORE_EMULATOR_HOST` is set. The service account JSON is still parsed at startup, so it needs the right shape (`project_id`, `client_email`, `private_key`), but no real credentials:
 
@@ -172,6 +172,7 @@ tsc-scheda-orari/
 │       └── imgs/                ← The Space Cinema logo and favicon
 ├── docs/
 │   ├── screenshots/             ← images used in this README
+│   ├── input.XLS                ← sample Vista export (10 June 2024), the input of the example above
 │   └── user-guide-it.pdf        ← the guide I wrote for my colleagues, in Italian
 ├── .env.example                 ← environment variables with placeholder values
 ├── package.json
