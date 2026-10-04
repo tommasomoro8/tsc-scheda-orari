@@ -49,7 +49,6 @@ Once the last show of the day has started, nobody else walks in, so people can l
 
 ![Step one: progress bar with the three steps "Carica l'XLS", "Inserisci orari luci", "Scarica la scheda" and an orange button to upload the XLS file](docs/screenshots/upload-xls.png)
 
-<!-- TODO: add docs/screenshots/lights-times.png (step two screenshot) -->
 ![Step two: window listing the films with no saved credits, here "(V.O.) KINDS OF KINDNESS", with hours and minutes fields under "Accensione luci dopo" and the Indietro and Fatto buttons](docs/screenshots/lights-times.png)
 
 ![Step three: the message "La scheda è pronta!" with an orange button to download or print the work sheet](docs/screenshots/sheet-ready.png)

@@ -14,9 +14,8 @@ screenshots:
     alt: "Home screen of the app: The Space Cinema logo, the title \"Scheda Lavoro\", an orange button to create a new work sheet and a \"Consulta orari salvati\" link to the saved times"
   - path: docs/screenshots/upload-xls.png
     alt: "Step one: progress bar with the three steps \"Carica l'XLS\", \"Inserisci orari luci\", \"Scarica la scheda\" and an orange button to upload the XLS file"
-  # TODO: uncomment once the file exists
-  # - path: docs/screenshots/lights-times.png
-  #   alt: "Step two: window listing the films with no saved credits, here \"(V.O.) KINDS OF KINDNESS\", with hours and minutes fields under \"Accensione luci dopo\" and the Indietro and Fatto buttons"
+  - path: docs/screenshots/lights-times.png
+    alt: "Step two: window listing the films with no saved credits, here \"(V.O.) KINDS OF KINDNESS\", with hours and minutes fields under \"Accensione luci dopo\" and the Indietro and Fatto buttons"
   - path: docs/screenshots/sheet-ready.png
     alt: "Step three: the message \"La scheda è pronta!\" with an orange button to download or print the work sheet"
   - path: docs/screenshots/work-sheet.png
