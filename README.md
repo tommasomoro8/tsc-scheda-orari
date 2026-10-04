@@ -43,13 +43,19 @@ A web app in three steps, the same three shown in its progress bar:
 
 1. **Upload the schedule.** I export the "Projection Schedule by Start Time" report from Vista as an XLS file and upload it. The app checks that it is the right report and reads the date, screen, start time, end time and title of every screening.
 2. **Enter the missing credits (only for new films).** For every film the app looks up how long its end credits last. If a film isn't saved yet, it asks once how many hours and minutes after the start of the screening the lights come on. From that it saves the time between the start of the credits and the end of the screening. The next time that film appears in a schedule, nobody has to type anything.
-3. **Print the sheet.** The app opens the browser's print preview with the sheet already filled in: one row per screening, sorted by the time to go into the room, with "NR" (*non riparte*, it doesn't restart) on a screen's last show, a box with the time each screen closes for the night, and empty columns for the staff to write their names and cleaning tasks. From there it can be printed or saved as a PDF.
+3. **Print the sheet.** The app opens the browser's print preview with the sheet already filled in: one row per screening, sorted by the time to go into the room, a box with the time each screen closes for the night, and empty columns for the staff to write their names and cleaning tasks. From there it can be printed or saved as a PDF.
 
-Once the last show of the day has started, nobody else walks in, so people can leave through the front doors. Screens that empty after that are left off the main list and only appear in the closures box.
+The app also handles a screen's last show of the night. That row is marked "NR" (*non riparte*, it doesn't restart): there is no show after it, so the room doesn't need cleaning, but an usher still has to go in and send people out through the exits under the screen. Once the last show of the day has started, nobody else walks in, so people can leave through the front doors. Screens that empty after that are left off the main list and only appear in the closures box.
+
+**Step 1: upload the schedule**
 
 ![Step one: progress bar with the three steps "Carica l'XLS", "Inserisci orari luci", "Scarica la scheda" and an orange button to upload the XLS file](docs/screenshots/upload-xls.png)
 
+**Step 2: enter the missing credits**
+
 ![Step two: window listing the films with no saved credits, here "(V.O.) KINDS OF KINDNESS", with hours and minutes fields under "Accensione luci dopo" and the Indietro and Fatto buttons](docs/screenshots/lights-times.png)
+
+**Step 3: print the sheet**
 
 ![Step three: the message "La scheda è pronta!" with an orange button to download or print the work sheet](docs/screenshots/sheet-ready.png)
 
@@ -61,7 +67,7 @@ I also wrote a three-page [user guide in Italian](docs/user-guide-it.pdf) for my
 
 ## From input to output
 
-The input is the Vista report for 10 June 2024 ([`docs/input.XLS`](docs/input.XLS)). These are some of its rows (the report has 41 screenings across 12 screens):
+The input is a "Projection Schedule by Start Time" report exported from Vista, one for each day. The sample in [`docs/input.XLS`](docs/input.XLS) is the one for 10 June 2024, with 41 screenings across 12 screens. These are some of its rows:
 
 | Sala | Start | Finish | Film Title |
 | --- | --- | --- | --- |
@@ -72,7 +78,7 @@ The input is the Vista report for 10 June 2024 ([`docs/input.XLS`](docs/input.XL
 | 7 | 21:55 | 01:15 | KINDS OF KINDNESS |
 | 8 | 22:30 | 00:40 | L'ESORCISMO - ULTIMO ATTO |
 
-The saved credits length for *IF - Gli amici immaginari* is 9 minutes, so the 14:00 show in screen 7, which Vista says ends at 16:18, appears on the sheet as **7 – 16:09**. *Kinds of Kindness* has 9 minutes of credits too, and the 21:55 show is screen 7's last of the night, so screen 7 appears in the closures box at **01:06**. The last show to start is *L'Esorcismo* at 22:30, so screenings that empty from 22:30 on are not in the main list.
+The saved credits length for "IF - Gli amici immaginari" is 9 minutes, so the 14:00 show in screen 7, which Vista says ends at 16:18, appears on the sheet as **7 – 16:09**. "Kinds of Kindness" has 9 minutes of credits too, and the 21:55 show is screen 7's last of the night, so screen 7 appears in the closures box at **01:06**. The last show to start is "L'Esorcismo - Ultimo atto" at 22:30, so screenings that empty from 22:30 on are not in the main list.
 
 ![Printed work sheet for 10 June 2024: three columns of rows with screen number, entry time and an empty name field, cleaning tasks under each column, and on the right the closures box with each screen's closing time and an empty breaks box](docs/screenshots/work-sheet.png)
 
@@ -86,9 +92,9 @@ The saved credits length for *IF - Gli amici immaginari* is 9 minutes, so the 14
 ## What I learned
 
 - **Talking to a client.** It was one of the first times I worked out requirements with the people who would use the tool. I offered to build it for free, and I still had to convince them. In many companies "we've always done it this way" is a strong argument, and change is scary.
-- **Making do with what I had.** I had no access to Vista beyond its exported reports. After I explained the idea, the cinema's director gave me sample exports. Those, and what I knew from working the shifts myself, were all I had, so I built everything around that one report format.
+- **Making do with what I had.** I had no access to Vista beyond its exported reports. After I explained the idea, the cinema's director gave me sample exports. Those, and what I knew from working the shifts myself, were all I had. So I had to build everything around that one report format, thinking ahead about what could change from one file to the next: times typed in by hand, screenings that end after midnight, an extra sheet in the file, or the wrong report uploaded by mistake.
 - **Interfaces anyone can use.** The task is technical, but the interface had to work for any colleague: three steps with one button each, error messages that say which file to upload, and a short user guide.
-- **Problem solving.** The key was asking the right question: which time interval stays the same from one week to the next? I used all of these skills in my later projects.
+- **Problem solving.** At work I spotted a task that slowed everyone down and wasted resources, the staff's hours, and I automated it. I used all of these skills in my later projects.
 
 ## Stack
 
@@ -199,7 +205,7 @@ If I picked it up again:
 - **Fix the server's responses.** I would wait for every Firestore write and delete before answering, send exactly one response, and show errors in the interface. Films would get automatic document IDs, with the title stored in a field, so any title works. I would also add an endpoint to edit a saved time instead of deleting it.
 - **Add a shared staff password** in front of the delete route, which is enough for a tool used by one team.
 - **Move the sheet's layout to a configuration file** (screens, cleaning tasks, number of rows). Other cinemas with exits under the screen could then use it without touching the code.
-- **Remove the unused dependencies** and fix the doctype.
+- **Clean up the setup.** I would remove the unused dependencies, fix the doctype, move to a current Node.js version and run the app in Docker. I also wouldn't use Firestore for this little data. Back then I chose it because I felt more confident with it, but a small relational database in its own Docker container, next to the app, would be enough.
 
 ## Credits and license
 
