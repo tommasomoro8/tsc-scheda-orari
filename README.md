@@ -41,7 +41,7 @@ The Space's scheduling system (Vista) lists every screening with its end time, m
 
 A web app in three steps, the same three shown in its progress bar:
 
-1. **Upload the schedule.** I export the "Projection Schedule by Start Time" report from Vista as an XLS file and upload it. The app checks that it is the right report and reads the date, screen, start time, end time and title of every screening.
+1. **Upload the schedule.** using the "Projection Schedule by Start Time" report from Vista as an XLS file and upload it. The app checks that it is the right report and reads the date, screen, start time, end time and title of every screening.
 2. **Enter the missing credits (only for new films).** For every film the app looks up how long its end credits last. If a film isn't saved yet, it asks once how many hours and minutes after the start of the screening the lights come on. From that it saves the time between the start of the credits and the end of the screening. The next time that film appears in a schedule, nobody has to type anything.
 3. **Print the sheet.** The app opens the browser's print preview with the sheet already filled in: one row per screening, sorted by the time to go into the room, a box with the time each screen closes for the night, and empty columns for the staff to write their names and cleaning tasks. From there it can be printed or saved as a PDF.
 
