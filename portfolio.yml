@@ -18,7 +18,7 @@ screenshots:
     alt: "Step two: window listing the films with no saved credits, here \"(V.O.) KINDS OF KINDNESS\", with hours and minutes fields under \"Accensione luci dopo\" and the Indietro and Fatto buttons"
   - path: docs/screenshots/sheet-ready.png
     alt: "Step three: the message \"La scheda è pronta!\" with an orange button to download or print the work sheet"
-  - path: docs/screenshots/work-sheet.png
-    alt: "Printed work sheet for 10 June 2024: three columns of rows with screen number, entry time and an empty name field, cleaning tasks under each column, and on the right the closures box with each screen's closing time and an empty breaks box"
   - path: docs/screenshots/saved-times.png
     alt: "Saved times window: list of films such as \"IF - GLI AMICI IMMAGINARI - 9 min\" and \"LA STANZA DEGLI OMICIDI - 15 min\", each with a trash icon, and an orange Fatto button"
+  - path: docs/screenshots/work-sheet.png
+    alt: "Printed work sheet for 10 June 2024: three columns of rows with screen number, entry time and an empty name field, cleaning tasks under each column, and on the right the closures box with each screen's closing time and an empty breaks box"
