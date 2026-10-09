@@ -1,4 +1,4 @@
-title: "The Space Cinema Work Sheet"
+title: "Cinema Usher Schedule Generator"
 slug: "tsc-work-sheet"
 category: "pers"         # uni | school | pers | comm
 year: 2024
@@ -7,7 +7,7 @@ status: "completed"      # completed | in progress | archived
 role: "solo"             # e.g. "solo", "team of 4, backend"
 cover: docs/screenshots/cover.png
 demo: ""
-note: "No public demo, but it runs locally with the Firestore emulator and the sample Vista export in the repository."
+note: "No public demo. You can run it locally with the sample cinema schedule included in the repository."
 press: []
 screenshots:
   - path: docs/screenshots/cover.png

@@ -1,4 +1,4 @@
-# The Space Cinema Work Sheet
+# Cinema Usher Schedule Generator
 
 A web app that turns The Space Cinema's daily screening schedule into a printable work sheet, with the time ushers must enter each screen.
 
@@ -9,15 +9,14 @@ A web app that turns The Space Cinema's daily screening schedule into a printabl
 
 <!-- portfolio:summary
 ## The problem
-At The Space Cinema in Silea, where I worked as an usher, audiences leave through exits under the screen. Ushers must enter before the credits, but the cinema's system only lists when screenings end, so staff worked out every entry time by hand.
+At The Space Cinema in Treviso, where I worked as an usher, audiences leave through exits under the screen. Ushers must enter before the credits, but the cinema's system only lists when screenings end, so staff worked out every entry time by hand.
 
 ## The solution
-A web app: I upload the daily schedule exported from the cinema's system and get a printable work sheet with the time to enter each screen and when each screen closes. Each film's credits length is entered once and saved, so later sheets need no manual input.
+A web app that turns the cinema's daily schedule into a printable work sheet. The sheet shows when to enter each screen and when each screen closes. Each film's credits length is entered once and saved, so later sheets need no manual input.
 
 ## Technical challenges
-- Choosing what to save: the credits length stays the same, while the ads before the film change every week.
+- Choosing what to save: the schedule's start time includes the ads, which change every week, so I save the credits length, which never changes.
 - Reading the exported spreadsheet in the browser, where times come as text or as dates and screenings end after midnight.
-- Building the sheet: sorting by entry time, marking each screen's last show and laying out three columns per A4 page.
 
 ## What I learned
 - Talking to a client for the first time and finding what they need.
@@ -31,11 +30,11 @@ Node.js, Express, Firebase Firestore, SheetJS, HTML, CSS, JavaScript
 <!-- portfolio:start -->
 ## The problem
 
-In 2024 I worked as an usher at The Space Cinema in Silea, near Treviso. In most cinemas people leave a screen through the same doors they came in. In Silea they leave through doors under the screen, so the people coming out never cross the people walking into the next show: the flow goes one way only.
+In 2024 I worked as an usher at The Space Cinema in Treviso. In most cinemas people leave a screen through the same doors they came in. In Treviso they leave through doors under the screen, so the people coming out never cross the people walking into the next show: the flow goes one way only.
 
 The catch is that, in the dark, the exit doors under the screen are hard to see. The entrance doors are better lit, so if nobody stops them, people walk back out the way they came in. That's the ushers' job: we had to be inside the screen before the end credits started, send people out through the exits under the screen, and then clean the empty room.
 
-The Space's scheduling system (Vista) lists every screening with its end time, meaning the moment the projection is completely over, after the last credit. By then it's too late. The system was never designed for Silea's layout, so for years the staff worked out by hand, every day and one screening at a time, the time to go into each room. That's a lot of working hours spent on arithmetic.
+The Space's scheduling system (Vista) lists every screening with its end time, meaning the moment the projection is completely over, after the last credit. By then it's too late. The system was never designed for the Treviso cinema's layout, so for years the staff worked out by hand, every day and one screening at a time, the time to go into each room. That's a lot of working hours spent on arithmetic.
 
 ## The solution
 
@@ -195,7 +194,7 @@ I wrote this quickly, for one cinema, and the code shows it. These are the probl
 - **Incomplete error handling on the server.** Saving a film answers "OK" before Firestore has confirmed the write, so a failed save goes unnoticed. Deleting a film can try to answer twice when Firestore returns an error.
 - **The film title is the document ID.** A title containing `/` can't be saved: the server answers "OK" and nothing is stored, and the next lookup fails with an error 500.
 - **Saved times can't be edited**, only deleted and entered again on the next upload.
-- **The sheet is tied to Silea.** The closures box has 12 rows, one per screen in Silea: a 13th screen would overwrite the "Pause" box. The "Pause" box itself is never filled in, and the cleaning tasks ("PERIMETRO LATO 6", "PERIMETRO LATO 12") are written into the template.
+- **The sheet is tied to Treviso.** The closures box has 12 rows, one per screen in Treviso: a 13th screen would overwrite the "Pause" box. The "Pause" box itself is never filled in, and the cleaning tasks ("PERIMETRO LATO 6", "PERIMETRO LATO 12") are written into the template.
 - **Leftover code.** Socket.IO is started but never used, and so are `cookie-parser` and the Firebase storage bucket. An "event list" feature is commented out. The page opens `<html>` before `<!DOCTYPE html>`, so browsers render it in quirks mode.
 - **It only reads one report format,** the Vista "Projection Schedule by Start Time" export, and the interface is in Italian only.
 
